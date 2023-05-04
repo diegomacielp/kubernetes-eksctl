@@ -51,7 +51,7 @@
 --name external-dns \\<br>
 --namespace default \\<br>
 --cluster homologacao \\<br>
---attach-policy-arn arn:aws:iam::566854824552:policy/AllowExternalDNSUpdates \\<br>
+--attach-policy-arn arn:aws:iam::XXXXXXXXXXXX:policy/AllowExternalDNSUpdates \\<br>
 --approve*
 
 <p style='text-align: justify;'>Será informado um erro devido o IAM OIDC provider não está ativado, apenas executando os comandos retornados o problema é corrigido.<br>
@@ -124,7 +124,7 @@ Primeiramente é verificado o OpenID Connect do cluster, pois é necessário cri
 --cluster=homologacao \\<br>
 --namespace=kube-system \\<br>
 --name=cluster-autoscaler \\<br>
---attach-policy-arn=arn:aws:iam::566854824552:policy/ClusterAutoscalerPolicy \\<br>
+--attach-policy-arn=arn:aws:iam::XXXXXXXXXXXX:policy/ClusterAutoscalerPolicy \\<br>
 --override-existing-serviceaccounts \\<br>
 --approve*<br>
 \# *kubectl -n kube-system describe sa cluster-autoscaler*
