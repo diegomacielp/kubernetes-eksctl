@@ -1,0 +1,50 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: homologacao
+  region: us-east-2
+  version: "1.21"
+
+vpc:
+  cidr: 10.0.0.0/16
+
+availabilityZones:
+- us-east-2a
+- us-east-2b
+- us-east-2c
+
+managedNodeGroups:
+- name: ng-homologacao-on-demand
+  instanceType: m5a.large
+  spot: false
+  volumeSize: 80
+  minSize: 2
+  maxSize: 2
+  desiredCapacity: 2
+  labels:
+    alpha.eksctl.io/instance-type: on-demand
+  iam:
+    withAddonPolicies:
+      certManager: true
+      externalDNS: true
+      imageBuilder: true
+  ssh:
+    publicKeyName: homologacao
+- name: ng-homologacao-spot
+  instanceType: m5a.large
+  spot: true
+  volumeSize: 80
+  minSize: 0
+  maxSize: 6
+  desiredCapacity: 0
+  labels:
+    alpha.eksctl.io/instance-type: spot
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+      certManager: true
+      externalDNS: true
+      imageBuilder: true
+  ssh:
+    publicKeyName: homologacao

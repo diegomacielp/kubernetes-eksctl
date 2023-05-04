@@ -1,0 +1,47 @@
+prometheus:
+  global:
+    scrape_interval: 10s
+  server:
+    persistentVolume:
+      enabled: true
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 20Gi
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: alpha.eksctl.io/instance-type
+              operator: In
+              values:
+              - on-demand
+grafana:
+  persistence:
+    enabled: true
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+      - name: 'default'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        editable: true
+        options:
+          path: /var/lib/grafana/dashboards/default
+  dashboards:
+    default:
+      kong-dash:
+        gnetId: 7424
+        revision: 5
+        datasource: Prometheus
+      kic-dash:
+        gnetId: 15662
+        datasource: Prometheus
