@@ -12,7 +12,7 @@ spec:
     - dns01:
         route53:
           region: us-east-2
-          hostedZoneID: Z10118203772BQYLXSFJF
+          hostedZoneID: XXXXXXXXXXXXXXXXXXXXX
     - http01:
         ingress:
           class: nginx

@@ -1,6 +1,6 @@
 serviceAccount:
   annotaions:
-    eks.amazonaws.com/role-arn: arn:aws:iam::566854824552:role/AmazonEKSRole
+    eks.amazonaws.com/role-arn: arn:aws:iam::XXXXXXXXXXXX:role/AmazonEKSRole
 installCRDs: true
 securityContext:
   enabled: true
