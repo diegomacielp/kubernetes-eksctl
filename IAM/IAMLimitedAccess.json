@@ -28,11 +28,11 @@
                 "iam:TagRole"
             ],
             "Resource": [
-                "arn:aws:iam::566854824552:instance-profile/eksctl-*",
-                "arn:aws:iam::566854824552:role/eksctl-*",
-                "arn:aws:iam::566854824552:oidc-provider/*",
-                "arn:aws:iam::566854824552:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
-                "arn:aws:iam::566854824552:role/eksctl-managed-*"
+                "arn:aws:iam::XXXXXXXXXXXX:instance-profile/eksctl-*",
+                "arn:aws:iam::XXXXXXXXXXXX:role/eksctl-*",
+                "arn:aws:iam::XXXXXXXXXXXX:oidc-provider/*",
+                "arn:aws:iam::XXXXXXXXXXXX:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
+                "arn:aws:iam::XXXXXXXXXXXX:role/eksctl-managed-*"
             ]
         },
         {
@@ -41,7 +41,7 @@
                 "iam:GetRole"
             ],
             "Resource": [
-                "arn:aws:iam::566854824552:role/*"
+                "arn:aws:iam::XXXXXXXXXXXX:role/*"
             ]
         },
         {

@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
   - hosts: 
-    - alertmanager-eks.homologacao.tallos.com.br
+    - alertmanager-eks.homologacao.com.br
     secretName: tls-prometheus
   rules:
-  - host: alertmanager-eks.homologacao.tallos.com.br
+  - host: alertmanager-eks.homologacao.com.br
     http:
       paths:
       - path: /

@@ -5,16 +5,16 @@ metadata:
   namespace: monitoring
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/whitelist-source-range: 131.221.227.10/32
+    #nginx.ingress.kubernetes.io/whitelist-source-range:
     cert-manager.io/acme-challenge-type: "http01"
     cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
   tls:
   - hosts: 
-    - prometheus-eks.homologacao.tallos.com.br
+    - prometheus-eks.homologacao.com.br
     secretName: tls-prometheus
   rules:
-  - host: prometheus-eks.homologacao.tallos.com.br
+  - host: prometheus-eks.homologacao.com.br
     http:
       paths:
       - path: /

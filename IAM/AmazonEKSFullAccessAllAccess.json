@@ -12,7 +12,7 @@
                 "ssm:GetParameters"
             ],
             "Resource": [
-                "arn:aws:ssm:*:566854824552:parameter/aws/*",
+                "arn:aws:ssm:*:XXXXXXXXXXXX:parameter/aws/*",
                 "arn:aws:ssm:*::parameter/aws/*"
             ],
             "Effect": "Allow"
